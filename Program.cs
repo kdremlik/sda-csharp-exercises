@@ -14,7 +14,7 @@ namespace sda_csharp_exercises
 
         private static void PasswdComp(string passwd)
         {
-            bool c1 = false, c2 = false, c3 = false, c4 = false, c5 = false;
+            bool islenght = false, isUpper = false, isLower = false, IsDigit = false, containsSpecial = false;
             char[] passwdarr = passwd.ToCharArray();
             if (passwd.Length <6)
             {
@@ -22,12 +22,12 @@ namespace sda_csharp_exercises
             }
             else
             {
-                c1 = true;
+                islenght = true;
             }
 
             if (passwd.Any(char.IsUpper))
             {
-                c2 = true;
+                isUpper = true;
             }
             else
             {
@@ -36,7 +36,7 @@ namespace sda_csharp_exercises
 
             if (passwd.Any(char.IsLower))
             {
-                c3 = true;
+                isLower = true;
             }
             else
             {
@@ -45,7 +45,7 @@ namespace sda_csharp_exercises
 
             if (passwd.Any(char.IsDigit))
             {
-                c4 = true;
+                IsDigit = true;
             }
             else
             {
@@ -54,14 +54,14 @@ namespace sda_csharp_exercises
             string[] cont = {"&", "*","$" ,"#"};
             if (cont.Any(passwd.Contains))
             {
-                c5 = true;
+                containsSpecial = true;
             }
             else
             {
                 Console.WriteLine("Hasło musi zawierać najmniej jeden znak specjalny spośród następujących: &*$#");
             }
 
-            if (c1 && c2 && c3 && c4 && c5 == true)
+            if (islenght && isUpper && isLower && IsDigit && containsSpecial == true)
             {
                 Console.WriteLine("Podane hasło spełnia wymogi");
             }
