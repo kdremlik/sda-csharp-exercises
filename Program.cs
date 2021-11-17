@@ -6,8 +6,9 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            string text = "b3f0r3 3ncrypt10n";
-            Encrypt(text);
+            string text = "t3k$t d0 prz3k$zt4łc3n14";
+            string textToEncrypt = "tekst do przekształcenia";
+            Encrypt(textToEncrypt);
             Decrypt(text);
 
         }
@@ -20,12 +21,16 @@ namespace sda_csharp_exercises
 
             string decrypted = text;
 
-            for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < text.Length -1; i++)
             {
-                decrypted = decrypted.Replace(leetLetters[i], naturalLetters[i]);
+                for (int j = 0; j < leetLetters.Length; j++)
+                {
+                    decrypted = decrypted.Replace(leetLetters[j], naturalLetters[j]);
+                }
+                
             }
 
-            Console.WriteLine(text);
+            //Console.WriteLine(text);
             Console.WriteLine(decrypted);
         }
 
@@ -39,10 +44,14 @@ namespace sda_csharp_exercises
             string encrypted = text;
             for (int i = 0; i < leetLetters.Length; i++)
             {
-                encrypted = encrypted.Replace(naturalLetters[i], leetLetters[i]);
+                for (int j = 0; j < leetLetters.Length; j++)
+                {
+                    encrypted = encrypted.Replace(naturalLetters[i], leetLetters[i]);
+                }
+                
             }
 
-            Console.WriteLine(text);
+            //Console.WriteLine(text);
             Console.WriteLine(encrypted);
 
 
