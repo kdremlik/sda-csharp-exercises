@@ -8,28 +8,38 @@ namespace sda_csharp_exercises
         {
             string unsorted = "89294729265";
             //int[] unsortedArray = new int[unsorted.Length];
-            int[] unsortedArray = new int[10] {6, 43, 47, 65, 21, 234, 547, 44, 77, 88};
+            int[] unsortedArray = new int[10] {77, 43, 47, 65, 21, 234, 547, 44, 6, 88};
             BubbleSort(unsortedArray);
         }
 
         private static void BubbleSort(int[] unsortedArray)
         {
+
+            int temp = 0;
+            int noSwap = 0;
             //int[] sortedArray = new int[unsortedArray.Length];
-            for (int i = 0; i < unsortedArray.Length -1; i+=2)
+            // Przechodzi po całej tabeli 
+            for (int i = 0; i <= unsortedArray.Length - 1; i++)
             {
-                if (unsortedArray[i + 1] > unsortedArray[i]) 
+                for (int j = 1; j <= unsortedArray.Length - 1; j++)
                 {
-                    int tmp = unsortedArray[i+1];
-                    unsortedArray[i+1] = unsortedArray[i];
-                    unsortedArray[i] = tmp;
+
+                    if (unsortedArray[j-1] > unsortedArray[j])
+                    {
+                        temp = unsortedArray[j-1];
+                        unsortedArray[j-1] = unsortedArray[j];
+                        unsortedArray[j] = temp;
+                    }
+                    else
+                    {
+                        noSwap++;
+                    }
                 }
-
-                
-
-
-
+                //if (noSwap > 5)
+                //{
+                //    break;
+                //}
             }
-
             foreach (int x in unsortedArray)
             {
                 Console.WriteLine(x);
@@ -37,6 +47,7 @@ namespace sda_csharp_exercises
         }
     }
 }
+
 //First Pass
 //( 5 1 4 2 8 ) → (1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
 //( 1 5 4 2 8 ) → (1 4 5 2 8 ), Swap since 5 > 4
