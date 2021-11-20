@@ -11,5 +11,16 @@ namespace sda_csharp_exercises
 
         public decimal Salary{ get; set; }
 
+        public Employee(string firstName, string lastName, int yearOfBirth, decimal salary) 
+            : base(firstName, lastName, yearOfBirth)
+
+        {
+            Salary = salary;
+        }
+
+        public Employee() : this("", "", 1900, 0)
+        {
+
+        }
     }
 }
