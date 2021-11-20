@@ -22,5 +22,11 @@ namespace sda_csharp_exercises
         {
 
         }
+
+        public void WhoAmIWithSalary()
+        {
+            base.WhoAmI();
+            Console.WriteLine($"Salary = {Salary}");
+        }
     }
 }
