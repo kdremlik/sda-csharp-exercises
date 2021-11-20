@@ -15,7 +15,6 @@ namespace sda_csharp_exercises
             List<Animal> animals = new List<Animal>();
             animals.Add(dog1);
             animals.Add(cat1);
-
             foreach (Animal a in animals)
             {
                 a.MakeSound();
