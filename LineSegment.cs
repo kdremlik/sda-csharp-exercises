@@ -64,7 +64,7 @@ namespace sda_csharp_exercises
             return Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2) + Math.Pow(Z2 - Z1, 2));
         }
 
-
+        
 
     }
 }
