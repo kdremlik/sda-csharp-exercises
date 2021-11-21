@@ -8,11 +8,11 @@ namespace sda_csharp_exercises
 {
     class Square : Shape
     {
-        private double Side { get; set; }
+        public double Side { get; set; }
 
-        public override double  GetArea(double side)
+        public override double  GetArea()
         {
-            return side * side;
+            return Side * Side;
         }
 
         public Square(double side)

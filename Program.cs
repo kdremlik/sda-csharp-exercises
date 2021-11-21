@@ -9,9 +9,9 @@ namespace sda_csharp_exercises
         {
             List<Shape> shapes = new List<Shape>();
 
-            Square square = new Square(5);
+            Square square = new Square(3);
 
-            Circle circle = new Circle(6);
+            Circle circle = new Circle(4);
 
             shapes.Add(square);
             shapes.Add(circle);

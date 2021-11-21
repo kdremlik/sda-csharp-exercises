@@ -8,6 +8,8 @@ namespace sda_csharp_exercises
 {
     class Shape
     {
+
+
         public virtual double GetArea()
         {
             return 0;

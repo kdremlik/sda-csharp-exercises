@@ -11,9 +11,9 @@ namespace sda_csharp_exercises
         private double Radius { get; set; }
 
         const double Pi = 3.14;
-        public override double GetArea(double radius)
+        public override double GetArea()
         {
-            return Pi * (radius * radius);
+            return Pi * (Radius * Radius);
         }
 
         public Circle(double radius)
