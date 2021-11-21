@@ -10,9 +10,10 @@ namespace sda_csharp_exercises
     {
         private double X1 { get; }
         private double Y1 { get; }
+        private double Z1 { get; }
         private double X2 { get; }
         private double Y2 { get; }
-
+        private double Z2 { get; }
         //private List<MyPoint> points = new List<MyPoint>();
         //public LineSegment(MyPoint a, MyPoint b)
         //{
@@ -40,12 +41,29 @@ namespace sda_csharp_exercises
             Y2 = y2;
         }
 
+        public LineSegment(MyPoint3D a, MyPoint3D b)
+        {
+            X1 = a.X;
+            Y1 = a.Y;
+            Z1 = a.Z;
+            X2 = b.X;
+            Y2 = b.Y;
+            Z2 = b.Z;
+
+        }
+
 
 
         public double Length()
         {
             return Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2));
         }
+
+        public double Length3D()
+        {
+            return Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2) + Math.Pow(Z2 - Z1, 2));
+        }
+
 
 
     }

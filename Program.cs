@@ -16,6 +16,12 @@ namespace sda_csharp_exercises
 
             Console.WriteLine(line2.Length());
 
+
+            MyPoint3D point3 = new MyPoint3D(5, 10, 15);
+            MyPoint3D point4 = new MyPoint3D(10, 15, 25);
+            LineSegment line3 = new LineSegment(point3, point4);
+            Console.WriteLine(line3.Length3D());
+
         }
     }
 }
