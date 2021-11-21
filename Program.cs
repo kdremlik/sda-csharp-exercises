@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace sda_csharp_exercises
 {
@@ -6,7 +7,22 @@ namespace sda_csharp_exercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<Shape> shapes = new List<Shape>();
+
+            Square square = new Square(5);
+
+            Circle circle = new Circle(6);
+
+            shapes.Add(square);
+            shapes.Add(circle);
+
+            double totalArea = 0;
+            foreach (var s in shapes)
+            {
+                totalArea += s.GetArea();
+            }
+
+            Console.WriteLine(totalArea);
         }
     }
 }
